@@ -21,5 +21,5 @@ gcc 2.c -o 2.exe
 
 ## Author
 
-- **Name:** AryanS
-- **GitHub:** [Infinity](https://github.com/Infinity)
+- **Name:** AryanSisodiya
+- **GitHub:** [InfinityxR9](https://github.com/InfinityxR9)
