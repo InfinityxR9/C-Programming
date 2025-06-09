@@ -39,7 +39,7 @@ int main()
     srand((unsigned int)time(NULL));
     for (int i = 0; i < length; i++)
     {
-        arr[i] = rand() % 100000;
+        arr[i] = rand() % 100000000000;
     }
     printf("Array generation successfull");
 
@@ -53,11 +53,11 @@ int main()
 
     double runtime = (double)(end_time.QuadPart - start_time.QuadPart) / frequency.QuadPart;
 
-    printf("\nSorted array:\n");
-    for (int i = 0; i < length; i++)
-    {
-        printf("%d ", arr[i]);
-    }
+    // printf("\nSorted array:\n");
+    // for (int i = 0; i < length; i++)
+    // {
+    //     printf("%d ", arr[i]);
+    // }
     printf("\n");
 
     // Show performance report
