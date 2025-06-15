@@ -1,0 +1,10 @@
+Complete the following Code tomorrow:
+    infix to postfix Code
+    parenthesis (multiple) matching Code
+
+View the Queue videos again and do their practicals
+    Using Arrays
+    Circular Queue
+
+    using Linked List
+     
