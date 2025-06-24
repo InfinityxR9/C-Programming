@@ -1,10 +1,24 @@
-Complete the following Code tomorrow:
-    infix to postfix Code
-    parenthesis (multiple) matching Code
-
 View the Queue videos again and do their practicals
-    Using Arrays
+    Using Arrays        (Started but not completed)
     Circular Queue
 
     using Linked List
+
+Sorting Algorithms
+
+
+## Start C programming series from vid 52
+# Python OOPs + Revise some other previous concepts
+
+
+
+Queue using Arrays functions
+    Display()
+    isEmpty()
+    isFull()
+    push()
+    pop()
+    peek()
+    queue_front()
+    queue_rear()
      
