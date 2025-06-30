@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// This will be a by default Linear Queue
+// This will be a by default Circular Queue
 
 typedef struct Queue_Arrays
 {
@@ -22,7 +22,7 @@ void Display(Queue *queue)
 
 int isFull(Queue *queue)
 {
-    if (queue->rear == queue->size - 1)
+    if ((queue->rear + 1) % queue->size == queue->front)
         return 1;
     return 0;
 }
@@ -47,7 +47,10 @@ int queue_rear(Queue *queue)
 void enqueue(Queue *queue, int val)
 {
     if (!isFull(queue))
-        queue->arr[++queue->rear] = val;
+    {
+        queue->rear = (queue->rear + 1) % queue->size;
+        queue->arr[queue->rear] = val;
+    }
     else
         printf("Queue overflow");
 }
@@ -57,7 +60,8 @@ int dequeue(Queue *queue)
     int checkVal_or_returnVal = -1;
     if (!isEmpty(queue))
     {
-        checkVal_or_returnVal = queue->arr[++queue->front];
+        queue->front = (queue->front + 1) % queue->size;
+        checkVal_or_returnVal = queue->arr[queue->front];
     }
     else
         printf("Queue underflow");
@@ -78,8 +82,8 @@ int main()
 {
     Queue *queue = (Queue *)malloc(sizeof(Queue));
     queue->size = 7;
-    queue->front = queue->rear = -1;
-    queue->arr = (int *)malloc(queue->size * sizeof(int));
+    queue->front = queue->rear = 0;
+    queue->arr = (int *)malloc((queue->size + 1) * sizeof(int));
 
     Display(queue);
     enqueue(queue, 60);

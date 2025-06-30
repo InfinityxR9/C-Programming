@@ -11,8 +11,7 @@ typedef struct Linked_List
 
 void Display(Linked_List *head)
 {
-    printf("%d ", head->data);
-    while (head->next != NULL)
+    while (head != NULL)
     {
         head = head->next;
         printf("%d ", head->data);
