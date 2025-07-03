@@ -67,7 +67,7 @@ int dequeue(Queue *queue)
 
 int peek(Queue *queue, int peek_index)
 { // peek_index is the position (starting from 1, from the front of the queue) of the element to be returned
-    if (0 < peek_index && peek_index <= queue->front + queue->rear)
+    if (0 < peek_index && peek_index <= (queue->rear - queue->front))
     {
         return queue->arr[peek_index + queue->front];
     }
@@ -81,16 +81,16 @@ int main()
     queue->front = queue->rear = -1;
     queue->arr = (int *)malloc(queue->size * sizeof(int));
 
-    Display(queue);
     enqueue(queue, 60);
-    enqueue(queue, 56);
-    enqueue(queue, 98);
-    enqueue(queue, 36);
-    enqueue(queue, 59);
-    enqueue(queue, 69);
     Display(queue);
-    printf("%d", dequeue(queue));
-    Display(queue);
+    // enqueue(queue, 56);
+    // enqueue(queue, 98);
+    // enqueue(queue, 36);
+    // enqueue(queue, 59);
+    // enqueue(queue, 69);
+    // Display(queue);
+    // printf("%d", dequeue(queue));
+    // Display(queue);
 
     int peek_ind;
     printf("\nEnter peek index: ");
