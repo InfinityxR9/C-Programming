@@ -1,5 +1,8 @@
 Sorting Algorithms
-    Quick Sort
+    Iterated Quick Sort
+    merge sort
+
+Make a sorting Algorithm which works on the principle of "extracting minima"
 
 ## Start C programming series from vid 52
 # Python OOPs + Revise some other previous concepts
