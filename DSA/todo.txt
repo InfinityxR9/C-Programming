@@ -4,6 +4,19 @@ Sorting Algorithms
 
 Make a sorting Algorithm which works on the principle of "extracting minima"
 
+Add "authors" in the readme.md
+
+Sort Trackers
+    Merge sort
+    quick sort
+    count sort
+
+*** Rectify the "check_bst" Algorithm.. (brain not braining right now)
+
+### Workflow?
+    Do DSA in C 
+    If mood for revision, do in C++ not in C
+
 ## Start C programming series from vid 52
 # Python OOPs + Revise some other previous concepts
 
