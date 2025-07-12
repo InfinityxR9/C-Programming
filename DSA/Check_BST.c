@@ -46,23 +46,40 @@ void free_Nodes(Node *root)
     }
 }
 
-int is_BST(Node *root)
+int is_BST (Node*);
+
+int is_BST_algo(Node *root, Node** prev)
 {
-    static Node* prev= NULL;
     if (root != NULL) {
-        if (!is_BST(root->left_node)) {
-            printf("inside !isbst root left node\n");
+        if (!is_BST_algo(root->left_node, prev)) {
+            // printf("inside !isbst root left node\n");
             return 0;
         }
-        if (prev != NULL && prev->data >= root->data) {
-            printf("inside prev!= null && prev data..\n");
+        if (*prev != NULL && (*prev)->data >= root->data) {
+            // printf("inside prev!= null && prev data..\n");
             return 0;
         }
 
-        prev = root;
-        return is_BST(root->right_node);
+        *prev = root;
+        return is_BST_algo(root->right_node, prev);
     }
     return 1;
+}
+
+int is_BST (Node* root) {
+    Node* prev = NULL;
+    return is_BST_algo(root, &prev);
+}
+
+void in_order(Node *root)
+{
+    // static Node* ptr = root;
+    if (root != NULL)
+    {
+        in_order(root->left_node);
+        printf("%d ", root->data);
+        in_order(root->right_node);
+    }
 }
 
 int main()
@@ -73,7 +90,7 @@ int main()
     Node *c2l = create_node(2);
     Node *c2r = create_node(11);
     Node *c3l = create_node(0);
-    Node *c32r = create_node(5);
+    Node *c32r = create_node(5);// 5
     Node *c12l = create_node(7); // 7
 
     link_right(root, c1r);
@@ -87,6 +104,7 @@ int main()
     link_right(c2l, c32r);
 
     printf("is bst: %d\n", is_BST(root));
+    in_order(root);
 
     /*
     The Binary Tree Node Structure: (c === child)

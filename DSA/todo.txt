@@ -11,7 +11,7 @@ Sort Trackers
     quick sort
     count sort
 
-*** Rectify the "check_bst" Algorithm.. (brain not braining right now)
+*** create a new algorithm for "check_bst" (create the inorder array and then find whether it is in ascending order or not, simple!)
 
 ### Workflow?
     Do DSA in C 
