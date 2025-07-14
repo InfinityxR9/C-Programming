@@ -77,6 +77,8 @@ Node* search_iter (Node* root, int key) {
             ptr = ptr->left_node;
         }
     }
+
+    return ptr;
 }
 
 void in_order(Node *root)
@@ -112,7 +114,7 @@ int main()
     link_right(c2l, c32r);
 
     in_order(root);
-    int key = 5;
+    int key = 11;
 
     if (search_recur(root, key) != NULL) {
         printf("\nThe key %d is found (recursive): %d\n", key, search_recur(root, key)->data);

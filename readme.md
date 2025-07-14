@@ -28,6 +28,8 @@ This repository contains a collection of C programs for learning and experimenti
 - [`Bubble_Sort.c`](DSA/Bubble_Sort.c): Standard and adaptive bubble sort.
 - [`Insertion_sort.c`](DSA/Insertion_sort.c): Insertion sort implementation.
 - [`Selection_sort.c`](DSA/Selection_sort.c): Selection sort implementation.
+- [`Quick_sort.c`](DSA/Quick_sort.c): Quick sort algorithm with partition logic.
+- [`Count_sort.c`](DSA/Count_sort.c): Counting sort for non-negative integers.
 - Performance tracking for sorting:
   - [`Sort_Tracker_Bubble_Sort.c`](DSA/Sort_Tracker_Bubble_Sort.c)
   - [`Sort_Tracker_Insertion_Sort.c`](DSA/Sort_Tracker_Insertion_Sort.c)
@@ -51,6 +53,11 @@ This repository contains a collection of C programs for learning and experimenti
 ### Linked Lists
 - [`Linked_Lists.c`](DSA/Linked_Lists.c): Singly linked list with insert, delete, and search operations.
 
+### Trees
+- [`Binary_trees.c`](DSA/Binary_trees.c): Binary tree creation, traversal (in-order, pre-order, post-order), and node linking.
+- [`Check_BST.c`](DSA/Check_BST.c): Checks if a binary tree is a valid Binary Search Tree (BST) using in-order traversal.
+- [`insert_BST.c`](DSA/insert_BST.c): Iterative insertion of nodes into a BST, maintaining BST properties.
+
 ---
 
 ## 🏁 Getting Started
@@ -61,4 +68,14 @@ To compile and run any C file:
 gcc filename.c -o filename.exe
 ./filename.exe
 ```
-## Happy Coding!
+
+For DSA files, navigate to the `DSA` folder and compile as above.
+
+---
+
+## 👤 Authors
+
+- **Aryan Sisodiya**
+- [GitHub: InfinityxR9](https://github.com/InfinityxR9)
+
+##
