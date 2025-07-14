@@ -2,11 +2,10 @@
 #include <stdlib.h>
 
 /*
-This file checks whether the given Binary Tree is a Binary Search Tree or not
-Binary Search Tree (BST):
-    1. All nodes in the left subtree of a node must have values less than the node's value.
-    2. All nodes in the right subtree must have values greater than the node's value.
-    3. No node element is repeated
+This file illustrates and demonstrates the algorithm for recursively and iteratevily searching a key (data node) in a Binary Search Tree.
+    The in-general time complexity is O(h) where h is the height of the BST
+    The worst case time complexity is O(n)
+    The average/best case time complexity is O(log n)
 */
 
 typedef struct Node
@@ -46,29 +45,38 @@ void free_Nodes(Node *root)
     }
 }
 
-int is_BST (Node*);
-
-int is_BST_algo(Node *root, Node** prev)
-{
-    if (root != NULL) {
-        if (!is_BST_algo(root->left_node, prev)) {
-            // printf("inside !isbst root left node\n");
-            return 0;
-        }
-        if (*prev != NULL && (*prev)->data >= root->data) {
-            // printf("inside prev!= null && prev data..\n");
-            return 0;
-        }
-
-        *prev = root;
-        return is_BST_algo(root->right_node, prev);
+Node* search_recur (Node* root, int key) {
+    if (root == NULL) {
+        return NULL;
     }
-    return 1;
+
+    if (root->data == key) {
+        return root;
+    }
+
+    else if (root->data > key) {
+        return search_recur(root->left_node, key);
+    }
+    else {
+        return search_recur(root->right_node, key);
+    }
 }
 
-int is_BST (Node* root) {
-    Node* prev = NULL;
-    return is_BST_algo(root, &prev);
+Node* search_iter (Node* root, int key) {
+    Node* ptr = root;
+    while (ptr != NULL){
+        if (ptr->data == key) {
+            return ptr;
+        }
+
+        else if (ptr->data < key) {
+            ptr = ptr->right_node;
+        }
+
+        else {
+            ptr = ptr->left_node;
+        }
+    }
 }
 
 void in_order(Node *root)
@@ -103,8 +111,22 @@ int main()
     link_left(c2l, c3l);
     link_right(c2l, c32r);
 
-    printf("is bst: %d\n", is_BST(root));
     in_order(root);
+    int key = 5;
+
+    if (search_recur(root, key) != NULL) {
+        printf("\nThe key %d is found (recursive): %d\n", key, search_recur(root, key)->data);
+    }
+    else {
+        printf("\nThe key %d was not found in the BST (recursive)\n", key);
+    }
+
+    if (search_iter(root, key) != NULL) {
+        printf("\nThe key %d is found (iterative): %d\n", key, search_iter(root, key)->data);
+    }
+    else {
+        printf("\nThe key %d was not found in the BST (iterative)\n", key);
+    }
 
     /*
     The Binary Tree Node Structure: (c === child)
