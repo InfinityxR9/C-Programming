@@ -10,6 +10,8 @@ Sort Trackers
     quick sort
     count sort
 
+Reversing an array
+
 *** create a new algorithm for "check_bst" (create the inorder array and then find whether it is in ascending order or not, simple!)
 
 ### Workflow?

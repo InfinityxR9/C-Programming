@@ -2,18 +2,18 @@
 #include <stdlib.h>
 
 /*
-This file illustrates and demonstrates the algorithm for Rotations and Insertion in an AVL Tree.
+This file illustrates and demonstrates the algorithm for a Custom Sort using Rotations and Insertion in an AVL Tree and their in-order traversal
 AVL Trees are self-balancing BINARY SEARCH TREES that maintain the perfectness and balancing of the BST at the time of insertion operation through Rotations.
-There are 4 Types of Rotations:
-    RR  (Right Right)
-    LL  (Left Left)
-    RL  (Right Left)
-    LR  (Left Right)
-
 Time Complexities of demonstrated Algorithm:
-    The in-general time complexity is O(h) where h is the height of the BST
-    The worst case time complexity is O(log n)
-    The average/best case time complexity is O(log n)
+    The worst case time complexity is O(n log n)
+    The average/best case time complexity is O(n log n)
+
+Space Complexity: O(n)
+In-place: No
+Stable: No (Duplicates not allowed in the AVL/BS Trees)
+Adaptive: No
+
+DISCLAIMER: This Algorithm is not yet stable for handling Duplicate values as a BST/AVL Tree doesn't allow duplicates, If you feed duplicates, inconsistencies might appear.
 */
 
 typedef struct Node
@@ -136,68 +136,47 @@ Node *insert(Node *root, int key)
     return root;
 }
 
-Node *search(Node *root, int key)
-{
-    Node *ptr = root;
-    while (ptr != NULL)
-    {
-        if (ptr->data == key)
-        {
-            return ptr;
-        }
-
-        else if (ptr->data < key)
-        {
-            ptr = ptr->right_node;
-        }
-
-        else
-        {
-            ptr = ptr->left_node;
-        }
-    }
-
-    return ptr;
-}
-
-void in_order(Node *root)
+void in_order(Node *root, int *arr, int *index)
 {
     // static Node* ptr = root;
     if (root != NULL)
     {
-        in_order(root->left_node);
-        printf("%d ", root->data);
-        in_order(root->right_node);
+        in_order(root->left_node, arr, index);
+        arr[(*index)++] = root->data;
+        in_order(root->right_node, arr, index);
     }
+}
+
+void custom_sort(int *arr, int size, int *id)
+{
+    Node *root = NULL;
+    for (int i = 0; i < size; i++)
+    {
+        root = insert(root, arr[i]);
+    }
+
+    in_order(root, arr, id);
+    free_Nodes(root);
+}
+
+void print_arr(int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 }
 
 int main()
 {
-    Node *root = create_node(11);
-    printf("%d\n", root->data);
-    root = insert(root, 13);
-    printf("%d\n", root->data);
-    root = insert(root, 15);
-    printf("%d\n", root->data);
-    in_order(root);
-    printf("\n");
-    root = insert(root, 12);
-    printf("%d\n", root->data);
-    root = insert(root, 14);
-    printf("%d\n", root->data);
-    root = insert(root, 8);
-    printf("%d\n", root->data);
-    in_order(root);
-    printf("\n");
-    root = insert(root, 9);
-    printf("%d\n", root->data);
-    root = insert(root, 10);
-    printf("%d\n", root->data);
-    root = insert(root, 0);
-    printf("%d\n", root->data);
-    in_order(root);
+    int arr[] = {46, 82, 10, 8, 45, 76};
+    int size = sizeof(arr) / sizeof(int);
+    int id = 0;
 
-    free_Nodes(root);
+    print_arr(arr, size);
+    custom_sort(arr, size, &id);
+    print_arr(arr, size);
 
     return 0;
 }
