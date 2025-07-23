@@ -1,6 +1,5 @@
 Make a sorting Algorithm which works on the principle of "extracting minima"
 
-Find deepest node
 Insertion sort using binary search
 Book problems (Maximum subarray problem)
 
