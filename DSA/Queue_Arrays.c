@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 // This will be a by default Linear Queue
-
 typedef struct Queue_Arrays
 {
     int front;
