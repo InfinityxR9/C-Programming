@@ -7,6 +7,18 @@ Binary Search Tree (BST):
     1. All nodes in the left subtree of a node must have values less than the node's value.
     2. All nodes in the right subtree must have values greater than the node's value.
     3. No node element is repeated
+
+Algorithm: Check BST using the Recursive call-stack, in-order traversal-like implementation
+
+Time Complexity: O(n)
+Space Complexity: O(h)
+
+Checking In-order traversal approach.
+* We create a inorder traversal of the binary tree.
+* We check whether the inorder traversal is a sorted array by consecutively comparing values
+
+Time Complexity: O(n)
+Space Complexity: O(h+n) (Due to the recursive call-stack of inorder traversal and the length of in-order traversal array (Number of nodes))
 */
 
 typedef struct Node
@@ -16,6 +28,9 @@ typedef struct Node
     struct Node *right_node;
 } Node;
 
+int arr[];
+int _index = 0;
+
 Node *create_node(int data)
 {
     Node *ptr = (Node *)malloc(sizeof(Node));
@@ -24,6 +39,14 @@ Node *create_node(int data)
     ptr->data = data;
 
     return ptr;
+}
+
+int get_total_nodes(Node *root)
+{
+    if (root == NULL)
+        return 0;
+
+    return 1 + get_total_nodes(root->left_node) + get_total_nodes(root->right_node);
 }
 
 void link_right(Node *root, Node *right_node)
@@ -46,16 +69,19 @@ void free_Nodes(Node *root)
     }
 }
 
-int is_BST (Node*);
+int is_BST(Node *);
 
-int is_BST_algo(Node *root, Node** prev)
+int is_BST_algo(Node *root, Node **prev)
 {
-    if (root != NULL) {
-        if (!is_BST_algo(root->left_node, prev)) {
+    if (root != NULL)
+    {
+        if (!is_BST_algo(root->left_node, prev))
+        {
             // printf("inside !isbst root left node\n");
             return 0;
         }
-        if (*prev != NULL && (*prev)->data >= root->data) {
+        if (*prev != NULL && (*prev)->data >= root->data)
+        {
             // printf("inside prev!= null && prev data..\n");
             return 0;
         }
@@ -66,9 +92,41 @@ int is_BST_algo(Node *root, Node** prev)
     return 1;
 }
 
-int is_BST (Node* root) {
-    Node* prev = NULL;
+int is_BST(Node *root)
+{
+    Node *prev = NULL;
     return is_BST_algo(root, &prev);
+}
+
+void in_order_array (Node*);
+
+int is_BST_in_order(Node *root)
+{
+    in_order_array(root);
+    for (int i = 0; i < get_total_nodes(root); i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\n");
+
+    for (int i = 0; i < get_total_nodes(root)-1; i++)
+    {
+        if (arr[i] > arr[i + 1])
+            return 0;
+    }
+
+    return 1;
+}
+
+void in_order_array(Node *root)
+{
+    if (root != NULL)
+    {
+        in_order_array(root->left_node);
+        arr[_index++] = root->data;
+        in_order_array(root->right_node);
+    }
 }
 
 void in_order(Node *root)
@@ -90,7 +148,7 @@ int main()
     Node *c2l = create_node(2);
     Node *c2r = create_node(11);
     Node *c3l = create_node(0);
-    Node *c32r = create_node(4);// 5
+    Node *c32r = create_node(4); // 5
     Node *c12l = create_node(7); // 7
 
     link_right(root, c1r);
@@ -103,8 +161,11 @@ int main()
     link_left(c2l, c3l);
     link_right(c2l, c32r);
 
-    printf("is bst: %d\n", is_BST(root));
-    in_order(root);
+    // printf("is bst: %d\n", is_BST(root));
+    // in_order(root);
+
+    int isbst = is_BST_in_order(root);
+    printf("is bst? %d", isbst);
 
     /*
     The Binary Tree Node Structure: (c === child)
