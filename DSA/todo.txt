@@ -1,16 +1,6 @@
-Make a sorting Algorithm which works on the principle of "extracting minima"
-
 Insertion sort using binary search
 Book problems (Maximum subarray problem)
 
 Email to hostel-admin
-
-*** create a new algorithm for "check_bst" (create the inorder array and then find whether it is in ascending order or not, simple!)
-
-### Workflow?
-    Do DSA in C 
-    If mood for revision, do in C++ not in C
-
-# Python OOPs + Revise some other previous concepts
 
 cd "d:\Code Playground\C-Programming\DSA\" ; if ($?) { gcc Sort_Tracker_Insertion_Sort.c -o Sort_Tracker_Insertion_Sort -lpsapi} ; if ($?) { .\Sort_Tracker_Insertion_Sort }
