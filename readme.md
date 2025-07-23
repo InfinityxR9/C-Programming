@@ -16,10 +16,11 @@ This repository contains a collection of C programs for learning and experimenti
 - **DSA/**
   - Contains a wide range of data structures and algorithms implemented in C.
   - Each `.c` file is self-contained and demonstrates a specific concept or algorithm.
+  - `todo.txt` – Contains notes and future problem ideas (e.g., Maximum Subarray Problem).
 
 ---
 
-## 📚 Key DSA Implementations
+## 📚 Key DSA Implementations (Detailed)
 
 ### Arrays & ADT
 - [`ADT_Arrays.c`](DSA/ADT_Arrays.c): Abstract Data Type for dynamic arrays with insert, append, and delete operations.
@@ -30,6 +31,8 @@ This repository contains a collection of C programs for learning and experimenti
 - [`Selection_sort.c`](DSA/Selection_sort.c): Selection sort implementation.
 - [`Quick_sort.c`](DSA/Quick_sort.c): Quick sort algorithm with partition logic.
 - [`Count_sort.c`](DSA/Count_sort.c): Counting sort for non-negative integers.
+- [`custom_Sort.c`](DSA/custom_Sort.c): Sorts using a BST (tree sort).
+- [`insertion_sort_using_binary_search.c`](DSA/insertion_sort_using_binary_search.c): Insertion sort optimized with binary search for position.
 - Performance tracking for sorting:
   - [`Sort_Tracker_Bubble_Sort.c`](DSA/Sort_Tracker_Bubble_Sort.c)
   - [`Sort_Tracker_Insertion_Sort.c`](DSA/Sort_Tracker_Insertion_Sort.c)
@@ -37,6 +40,7 @@ This repository contains a collection of C programs for learning and experimenti
 
 ### Searching Algorithms
 - [`Linear_and_Binary_Search.c`](DSA/Linear_and_Binary_Search.c): Linear and binary search on arrays.
+- [`search_BST.c`](DSA/search_BST.c): Recursive and iterative search in BST.
 
 ### Stacks
 - [`Stack_Arrays.c`](DSA/Stack_Arrays.c): Stack implementation using arrays.
@@ -57,6 +61,10 @@ This repository contains a collection of C programs for learning and experimenti
 - [`Binary_trees.c`](DSA/Binary_trees.c): Binary tree creation, traversal (in-order, pre-order, post-order), and node linking.
 - [`Check_BST.c`](DSA/Check_BST.c): Checks if a binary tree is a valid Binary Search Tree (BST) using in-order traversal.
 - [`insert_BST.c`](DSA/insert_BST.c): Iterative insertion of nodes into a BST, maintaining BST properties.
+- [`delete_BST.c`](DSA/delete_BST.c): Deletion of nodes from a BST, handling all cases.
+- [`Invert_Binary_Tree.c`](DSA/Invert_Binary_Tree.c): Recursive and iterative inversion (mirroring) of a binary tree.
+- [`AVL_Trees_Rotations.c`](DSA/AVL_Trees_Rotations.c): AVL tree insertion and balancing with rotations.
+- [`Level_order_traversal.c`](DSA/Level_order_traversal.c): Iterative level-order traversal using a queue.
 
 ---
 
@@ -73,9 +81,16 @@ For DSA files, navigate to the `DSA` folder and compile as above.
 
 ---
 
-## 👤 Authors
+## 📝 Notes
+
+- `todo.txt` contains notes and future problem ideas (e.g., Maximum Subarray Problem).
+- All code is written for educational purposes and may include print statements for demonstration.
+
+---
+
+## 👤 Author
 
 - **Aryan Sisodiya**
 - [GitHub: InfinityxR9](https://github.com/InfinityxR9)
 
-##
+## Happy Coding!

@@ -1,6 +1,3 @@
-Insertion sort using binary search
 Book problems (Maximum subarray problem)
-
-Email to hostel-admin
 
 cd "d:\Code Playground\C-Programming\DSA\" ; if ($?) { gcc Sort_Tracker_Insertion_Sort.c -o Sort_Tracker_Insertion_Sort -lpsapi} ; if ($?) { .\Sort_Tracker_Insertion_Sort }
