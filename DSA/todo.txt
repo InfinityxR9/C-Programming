@@ -1,16 +1,10 @@
 Make a sorting Algorithm which works on the principle of "extracting minima"
 
-#Custom Algorithm
-    Take the array
-    Make a BST for the array by repetitevely inserting into tree
-    Do the in-order traversal
+Find deepest node
+Insertion sort using binary search
+Book problems (Maximum subarray problem)
 
-Sort Trackers
-    Merge sort
-    quick sort
-    count sort
-
-Reversing an array
+Email to hostel-admin
 
 *** create a new algorithm for "check_bst" (create the inorder array and then find whether it is in ascending order or not, simple!)
 
