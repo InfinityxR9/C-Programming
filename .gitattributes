@@ -1,0 +1,4 @@
+echo "* text=auto" > .gitattributes
+git add .gitattributes
+echo "*.c text eol=lf" >> .gitattributes
+echo "*.txt text eol=lf" >> .gitattributes
